@@ -12,12 +12,12 @@ t_constraint = cmds.parentConstraint(constraint_target,
                                      ctrl_grp,
                                      maintainOffset=True,
                                      skipRotate=['x', 'y', 'z'],
-                                     weight=1)
+                                     weight=1)[0]
 r_constraint = cmds.parentConstraint(constraint_target,
                                      ctrl_grp,
                                      maintainOffset=True,
                                      skipTranslate=['x', 'y', 'z'],
-                                     weight=1)
+                                     weight=1)[0]
 # Adding custom attributes to control (FollowTranslate/FollowRotate)
 cmds.addAttr(ctrl,
              longName='FollowTranslate',
