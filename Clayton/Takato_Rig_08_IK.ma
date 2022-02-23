@@ -1,6 +1,6 @@
 //Maya ASCII 2022 scene
-//Name: Takato_Rig_07_IK.ma
-//Last modified: Tue, Feb 22, 2022 10:15:11 PM
+//Name: Takato_Rig_08_IK.ma
+//Last modified: Tue, Feb 22, 2022 10:56:06 PM
 //Codeset: 1252
 requires maya "2022";
 requires "stereoCamera" "10.0";
@@ -12,11 +12,11 @@ fileInfo "version" "2022";
 fileInfo "cutIdentifier" "202110272215-ad32f8f1e6";
 fileInfo "osv" "Windows 10 Home N v2009 (Build: 19044)";
 fileInfo "license" "student";
-fileInfo "UUID" "E2477B5E-4C1F-C0EE-808C-B19551960614";
+fileInfo "UUID" "03AA763D-4D5D-B975-8F4B-5C9102331DE8";
 createNode transform -s -n "persp";
 	rename -uid "2103A8FF-49FE-F70F-2897-289AA28287E5";
-	setAttr ".t" -type "double3" 19.932261784839955 227.14054962779309 419.08117039379766 ;
-	setAttr ".r" -type "double3" -23.138352751545888 361.79999999960035 -1.4916210318721305e-16 ;
+	setAttr ".t" -type "double3" 172.63137839743851 208.5091752295578 394.73045861133079 ;
+	setAttr ".r" -type "double3" -20.738352751545907 381.79999999959841 8.5638213028493935e-16 ;
 	setAttr ".rp" -type "double3" -2.8421709430404007e-14 -2.8421709430404007e-14 0 ;
 	setAttr ".rpt" -type "double3" -5.8177188576257867e-14 2.0764670028551028e-14 -4.5933664600118508e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
@@ -24,7 +24,7 @@ createNode camera -s -n "perspShape" -p "persp";
 	setAttr -k off ".v";
 	setAttr ".rnd" no;
 	setAttr ".fl" 34.999999999999986;
-	setAttr ".coi" 479.54975561756862;
+	setAttr ".coi" 479.54975561760193;
 	setAttr ".ow" 59.416733321471419;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
@@ -11595,7 +11595,15 @@ createNode transform -n "ROOT_Jnt_Ctrl_Grp" -p "Center_Grp";
 	setAttr ".sp" -type "double3" 0 -2.4651903288156619e-32 3.3306690738754696e-16 ;
 createNode transform -n "ROOT_Jnt_Ctrl" -p "ROOT_Jnt_Ctrl_Grp";
 	rename -uid "CEBE4A25-4F83-F74E-5B33-5BBBE68BD4A9";
+	addAttr -ci true -sn "L_Arm_IKFK" -ln "L_Arm_IKFK" -min 0 -max 1 -at "double";
+	addAttr -ci true -sn "R_Arm_IKFK" -ln "R_Arm_IKFK" -min 0 -max 1 -at "double";
+	addAttr -ci true -sn "L_Leg_IKFK" -ln "L_Leg_IKFK" -min 0 -max 1 -at "double";
+	addAttr -ci true -sn "R_Leg_IKFK" -ln "R_Leg_IKFK" -min 0 -max 1 -at "double";
 	setAttr -l on -k off ".v";
+	setAttr -k on ".L_Arm_IKFK";
+	setAttr -k on ".R_Arm_IKFK";
+	setAttr -k on ".L_Leg_IKFK";
+	setAttr -k on ".R_Leg_IKFK";
 createNode nurbsCurve -n "ROOT_Jnt_CtrlShape" -p "ROOT_Jnt_Ctrl";
 	rename -uid "9875875D-445C-CD05-CAF0-89A18F6FE312";
 	setAttr -k off ".v";
@@ -31944,4 +31952,4 @@ connectAttr "pasted__diss_01FBXASC046png.msg" ":defaultTextureList1.tx" -na;
 connectAttr "pasted__DiffuseColor1.msg" ":defaultTextureList1.tx" -na;
 connectAttr "pasted__diss_00FBXASC046png.msg" ":defaultTextureList1.tx" -na;
 connectAttr "ikRPsolver.msg" ":ikSystem.sol" -na;
-// End of Takato_Rig_07_IK.ma
+// End of Takato_Rig_08_IK.ma
