@@ -14,6 +14,7 @@ def locator():
     loc = cmds.spaceLocator(position=[0,0,0], absolute=True)[0]
 
     cmds.xform(loc, translation=[mid_x, mid_y, mid_z], ws=True)
+locator()
 
 def joints_from_sels():
     sels = cmds.ls(sl=True)
